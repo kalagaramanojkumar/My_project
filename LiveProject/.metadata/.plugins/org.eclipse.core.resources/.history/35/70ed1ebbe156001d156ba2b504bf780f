@@ -1,0 +1,21 @@
+package com.techmahindra.ecommerce.listeners;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+public class Listeners implements ITestListener{
+
+	public void onTestStart(ITestResult arg0) {
+		Reporter.log("Test Started Running: "+arg0.getMethod());
+	}
+	public void onTestSkipped(ITestResult arg0) {
+		
+	}
+	public void onTestSuccess(ITestResult arg0) {
+		
+	}
+	public void onTestFailure(ITestResult arg0) {
+		
+	}
+}

@@ -1,0 +1,9 @@
+package com.techmahindra.testNG.excel;
+
+import org.testng.annotations.Test;
+
+public class WriteExcelDataByFrontStyle {
+  @Test
+  public void f() {
+  }
+}

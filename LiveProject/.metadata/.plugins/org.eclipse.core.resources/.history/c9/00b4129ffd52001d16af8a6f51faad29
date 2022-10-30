@@ -1,0 +1,28 @@
+package com.techmahindra.testNG;
+
+import org.testng.annotations.Test;
+
+import com.techmahindra.selenium.java.BasePage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeTest;
+
+public class Mouse_Keyboard_Operations extends BasePage{
+  @Test
+  public void dragNdrop() {
+	  driver.switchTo().frame(0);
+	   WebElement drag = driver.findElement(By.id("draggable"));
+	   WebElement drop=driver.findElement(By.id("droppable"));
+	   Actions a=new Actions(driver);
+	   a.dragAndDrop(drag, drop).build().perform();
+	   a.clickAndHold(drag).moveToElement(drop).release().build().perform();
+  }
+  @BeforeTest
+  public void beforeTest() {
+  
+  browserLaunch("chrome","https://jqueryui.com/droppable/");
+  }
+
+}

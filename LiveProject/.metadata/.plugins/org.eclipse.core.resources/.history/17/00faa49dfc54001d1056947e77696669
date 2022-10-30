@@ -1,0 +1,23 @@
+package com.techmahindra.testNG.excel;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
+public class WriteExcelDataByIndex {
+	
+	public FileInputStream fi;
+	public FileOutputStream fo;
+	public XSSFWorkbook w;
+	public XSSFSheet s;
+	public XSSFRow row;
+	public XSSFCell cell;
+  @Test
+  public void f() {
+  }
+}

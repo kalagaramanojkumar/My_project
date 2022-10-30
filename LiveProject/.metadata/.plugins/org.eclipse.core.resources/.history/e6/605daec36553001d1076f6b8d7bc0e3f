@@ -1,0 +1,43 @@
+package com.techmahindra.testNG;
+
+import org.testng.annotations.Test;
+
+import com.techmahindra.selenium.java.BasePage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeTest;
+
+public class Mouse_Keyboard_Operations{
+	public WebDriver driver;
+	public Actions a;
+	
+  @Test(enabled=false)
+  public void dragNdrop() {
+	  driver.switchTo().frame(0);
+	   WebElement drag = driver.findElement(By.id("draggable"));
+	   WebElement drop=driver.findElement(By.id("droppable"));
+	 //	a.dragAndDrop(drag, drop).build().perform();
+	   a.clickAndHold(drag).moveToElement(drop).release().build().perform();
+  }
+  @Test
+  public void resizeObject() {
+	  driver.switchTo().frame(0);
+	  WebElement drag=driver.findElement(By.xpath("//div[@id='resizable']/div[3]"));
+	  a.dragAndDropBy(drag, 50, 150).build().perform();
+	  a.clickAndHold(drag).moveByOffset(200,50).build().perform();
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\612627350\\OneDrive - BT Plc\\Desktop\\chromedriver.exe");
+		driver = new ChromeDriver();
+		a=new Actions(driver);
+		driver.get("https://jqueryui.com/resizable/");
+		driver.manage().window().maximize();
+  }
+
+}

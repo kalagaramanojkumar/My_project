@@ -1,0 +1,5 @@
+package com.techmahindra.ecommerce.basepage;
+
+public class BasePage {
+
+}

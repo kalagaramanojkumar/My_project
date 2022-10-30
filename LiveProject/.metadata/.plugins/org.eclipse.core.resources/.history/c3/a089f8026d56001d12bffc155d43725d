@@ -1,0 +1,26 @@
+package com.techmahindra.ecommerce.home;
+
+import org.testng.annotations.Test;
+import com.techmahindra.ecommerce.basepage.BasePage;
+import com.techmahindra.ecommerce.pageUI.CreateLoginAccount;
+
+import org.apache.log4j.Logger;
+import org.testng.annotations.BeforeTest;
+
+public class TC001_CustomerRegistration extends BasePage {
+	
+	public static final Logger log=Logger.getLogger(TC001_CustomerRegistration.class.getName())
+	
+  @Test
+  public void customerRegistration() throws Exception {
+	  CreateLoginAccount login=new CreateLoginAccount(driver);
+	  login.createAccount();
+  }
+  @BeforeTest
+  public void beforeTest() throws Exception {
+	  browserLaunch(getData("browser"), getData("url"));
+	  
+  }
+
+
+}

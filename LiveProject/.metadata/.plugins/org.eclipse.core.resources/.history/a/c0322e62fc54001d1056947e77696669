@@ -1,0 +1,9 @@
+package com.techmahindra.testNG.excel;
+
+import org.testng.annotations.Test;
+
+public class WriteExcelDataByIndex {
+  @Test
+  public void f() {
+  }
+}

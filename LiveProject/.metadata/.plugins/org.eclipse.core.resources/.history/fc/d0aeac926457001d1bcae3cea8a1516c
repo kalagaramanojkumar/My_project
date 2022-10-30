@@ -1,0 +1,27 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
+
+public class ToTestWaits {
+	public WebDriver driver;
+  @Test
+  public void f() {
+	   WebDriverWait wait= new WebDriverWait(driver,50);
+	   wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("HMS")));
+	  driver.findElement(By.linkText("HMS")).clear();
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  System.setProperty("webdriver.chrome.driver","C:\\Users\\612627350\\OneDrive - BT Plc\\Desktop\\chromedriver.exe");
+  driver= new ChromeDriver();
+  driver.get("http:www.seleniumbymahesh.com");
+  driver.manage().window().maximize();
+  }
+
+}
